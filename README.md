@@ -1,66 +1,88 @@
 🛒 MetroMart
-A modular GitHub repository viewer app designed with Jetpack Compose, built using Kotlin, MVVM, and Clean Architecture.
-Perfect for learning scalable architecture, UI composition, and modern Android practices.
+A modern, modular GitHub repository viewer app built with Jetpack Compose, MVVM, and Clean Architecture.
+Designed for performance, testability, and scalability — ideal for learning production-ready Android development.
 
 🧩 Modular Architecture
-MetroMart follows a modular structure for better maintainability and separation of concerns:
+MetroMart is structured into clearly separated modules:
 
-
+kotlin
+Copy
+Edit
 📦 MetroMart
-├── data      → Contains DTOs, repository implementations, and fake/mock data
-├── domain    → Defines models, use cases, and repository interfaces
-├── ui        → Contains Jetpack Compose UI, themes, navigation, previews
-
-
+├── data      → DTOs, repository implementations, fake/mock data
+├── domain    → Models, use cases, repository interfaces
+├── ui        → Jetpack Compose UI, navigation, previews, ViewModels
 ✨ Features
-🔹 Jetpack Compose with Material 3 styling
+🧱 Built with Jetpack Compose and Material 3
 
-🔹 MVVM Architecture with ViewModel, UseCases, and state management
+🧭 Follows MVVM + Clean Architecture
 
-🔹 Modular project structure (data, domain, ui)
+📦 Modular structure: data, domain, and ui
 
-🔹 Sample data using GithubModel and OwnerModel
+🎨 Full support for multi-device @Preview (Phone, Tablet, Foldable) and Dark Mode
 
-🔹 Clean separation of UI, business logic, and data
+📃 Includes Baseline Profile for faster app startup and rendering
 
-🔹 Multi-device @Preview support (Phone, Tablet, Foldable – Light & Dark modes)
+✅ Compose UI Testing with test tags and assertions
 
-📁 Module Responsibilities
-data
-Provides data source logic (local/remote)
+🔍 Unit Testing for business logic and use cases
 
-Supplies fake/mock repository data
+🧪 Testing
+✅ Unit Testing
+Located in domain and data modules
 
-Contains actual implementations of the repository interface from domain
+Verifies use cases and repository behavior using fake/mock implementations
 
-domain
-Defines core models (GithubModel, OwnerModel)
+✅ Compose UI Tests
+Written with AndroidJUnit4 and ComposeTestRule
 
-Hosts business rules and UseCase classes
+Tests components using testTag + UI assertions
 
-Declares repository interfaces used by the app
+Example:
 
-ui
-Implements all Compose-based screens and components
+kotlin
+Copy
+Edit
+composeTestRule.onNodeWithTag("repoList").assertIsDisplayed()
+⚡ Baseline Profile
+Located in the baselineprofile module
 
-Manages theme, navigation, and ViewModels
+Optimizes runtime performance by pre-compiling key code paths
 
-Provides responsive previews for multiple screen sizes and themes
+Enables smooth first-launch experience
 
 🚀 How to Run
-Clone the repo:
-
 bash
 Copy
 Edit
 git clone https://github.com/jericricafrente03/MetroMart.git
-Open with Android Studio Hedgehog or newer
+Open in Android Studio Hedgehog or newer
 
-Run the ui module on an emulator or physical device
+Build and run the ui module
 
-🧪 Ideal For
-Practicing modular and scalable Android architecture
+Run tests from the test and androidTest directories
 
-Learning modern UI development with Compose
+📁 Module Responsibilities
+Module	Responsibilities
+data	Repository implementation, local/remote sources, fake data
+domain	Use cases, core models, business logic interfaces
+ui	Jetpack Compose UI, theming, navigation, previews, tests
+baselineprofile	BaselineProfileGenerator for performance optimization
 
-Quick testing of preview support for different screen sizes
+📌 Tech Stack
+Kotlin
+
+Jetpack Compose + Material 3
+
+Hilt (DI)
+
+MVVM + UseCases
+
+SQLDelight / Room (optional)
+
+Jetpack Navigation
+
+JUnit, Compose UI Test
+
+Baseline Profiles
+
