@@ -1,88 +1,69 @@
 🛒 MetroMart
-A modern, modular GitHub repository viewer app built with Jetpack Compose, MVVM, and Clean Architecture.
-Designed for performance, testability, and scalability — ideal for learning production-ready Android development.
+MetroMart is a modern GitHub repository viewer app built with Jetpack Compose, following MVVM and Clean Architecture principles.
+It showcases responsive UI design, performance optimizations, and testability — perfect for learning real-world Android development.
 
-🧩 Modular Architecture
-MetroMart is structured into clearly separated modules:
+✨ Key Features
+✅ Built with Jetpack Compose and Material 3
 
-kotlin
-Copy
-Edit
-📦 MetroMart
-├── data      → DTOs, repository implementations, fake/mock data
-├── domain    → Models, use cases, repository interfaces
-├── ui        → Jetpack Compose UI, navigation, previews, ViewModels
-✨ Features
-🧱 Built with Jetpack Compose and Material 3
+✅ Follows MVVM + Clean Architecture
 
-🧭 Follows MVVM + Clean Architecture
+✅ Sample GitHub repository list using GithubModel & OwnerModel
 
-📦 Modular structure: data, domain, and ui
+✅ Light & Dark Mode support
 
-🎨 Full support for multi-device @Preview (Phone, Tablet, Foldable) and Dark Mode
+✅ Multi-device @Preview support (Phone, Tablet, Foldable)
 
-📃 Includes Baseline Profile for faster app startup and rendering
+✅ UI testing with ComposeTestRule
 
-✅ Compose UI Testing with test tags and assertions
+✅ Unit testing for core business logic
 
-🔍 Unit Testing for business logic and use cases
+✅ Integrated Baseline Profile for improved startup performance
 
-🧪 Testing
-✅ Unit Testing
-Located in domain and data modules
+🧪 Testing Overview
+🧠 Unit Testing
+Verifies business logic and use case behavior
 
-Verifies use cases and repository behavior using fake/mock implementations
+Uses fake repositories for clean, isolated tests
 
-✅ Compose UI Tests
-Written with AndroidJUnit4 and ComposeTestRule
-
-Tests components using testTag + UI assertions
-
-Example:
+🧱 Compose UI Testing
+Uses ComposeTestRule and testTag for UI assertions
 
 kotlin
 Copy
 Edit
 composeTestRule.onNodeWithTag("repoList").assertIsDisplayed()
 ⚡ Baseline Profile
+Pre-compiles performance-critical code paths
+
+Boosts startup time and smoothens first render experience
+
 Located in the baselineprofile module
 
-Optimizes runtime performance by pre-compiling key code paths
-
-Enables smooth first-launch experience
-
-🚀 How to Run
+🚀 Getting Started
 bash
 Copy
 Edit
 git clone https://github.com/jericricafrente03/MetroMart.git
 Open in Android Studio Hedgehog or newer
 
-Build and run the ui module
+Sync and build the project
 
-Run tests from the test and androidTest directories
+Run the app on an emulator or device
 
-📁 Module Responsibilities
-Module	Responsibilities
-data	Repository implementation, local/remote sources, fake data
-domain	Use cases, core models, business logic interfaces
-ui	Jetpack Compose UI, theming, navigation, previews, tests
-baselineprofile	BaselineProfileGenerator for performance optimization
+Use the Run tool window to execute tests
 
-📌 Tech Stack
+🧑‍💻 Tech Stack
 Kotlin
 
-Jetpack Compose + Material 3
+Jetpack Compose
 
-Hilt (DI)
+Material 3
 
 MVVM + UseCases
 
-SQLDelight / Room (optional)
+Hilt (Dependency Injection)
 
-Jetpack Navigation
+JUnit & Compose UI Testing
 
-JUnit, Compose UI Test
-
-Baseline Profiles
+AndroidX Baseline Profile
 
