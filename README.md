@@ -1,4 +1,5 @@
 🛒 MetroMart
+
 MetroMart is a modern GitHub repository viewer app built with Jetpack Compose, following MVVM and Clean Architecture principles.
 It showcases responsive UI design, performance optimizations, and testability — perfect for learning real-world Android development.
 
@@ -29,9 +30,7 @@ Uses fake repositories for clean, isolated tests
 🧱 Compose UI Testing
 Uses ComposeTestRule and testTag for UI assertions
 
-kotlin
-Copy
-Edit
+
 composeTestRule.onNodeWithTag("repoList").assertIsDisplayed()
 ⚡ Baseline Profile
 Pre-compiles performance-critical code paths
