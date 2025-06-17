@@ -1,65 +1,66 @@
 🛒 MetroMart
-A sleek and modern e-commerce-style GitHub repository viewer built with Jetpack Compose, following Clean Architecture principles with a modular setup.
-
-<p align="center"> <img src="https://img.shields.io/badge/Jetpack%20Compose-%2300C853?style=for-the-badge&logo=android&logoColor=white"/> <img src="https://img.shields.io/badge/MVVM-%234285F4?style=for-the-badge"/> <img src="https://img.shields.io/badge/Modular%20Architecture-%23FF6F00?style=for-the-badge"/> <img src="https://img.shields.io/badge/Kotlin-%230095D5?style=for-the-badge&logo=kotlin&logoColor=white"/> </p>
-📱 Overview
-MetroMart mimics a shopping experience while displaying GitHub repositories using a clean, modern UI. This app is built to demonstrate best practices in modular development, UI design with Compose, and MVVM architecture.
+A modular GitHub repository viewer app designed with Jetpack Compose, built using Kotlin, MVVM, and Clean Architecture.
+Perfect for learning scalable architecture, UI composition, and modern Android practices.
 
 🧩 Modular Architecture
+MetroMart follows a modular structure for better maintainability and separation of concerns:
+
 kotlin
 Copy
 Edit
 📦 MetroMart
-├── data      // Handles data sources, repositories, models
-├── domain    // Business logic, use cases, interfaces
-├── ui        // Compose UI, navigation, themes, previews
-Each module is responsible for a specific layer of the app — making it scalable, testable, and clean.
-
+├── data      → Contains DTOs, repository implementations, and fake/mock data
+├── domain    → Defines models, use cases, and repository interfaces
+├── ui        → Contains Jetpack Compose UI, themes, navigation, previews
 ✨ Features
-✅ Built entirely with Jetpack Compose
+🔹 Jetpack Compose with Material 3 styling
 
-✅ Material 3 theming
+🔹 MVVM Architecture with ViewModel, UseCases, and state management
 
-✅ Follows MVVM + Clean Architecture
+🔹 Modular project structure (data, domain, ui)
 
-✅ Modular project structure (data/domain/ui)
+🔹 Sample data using GithubModel and OwnerModel
 
-✅ Sample data with GithubModel and OwnerModel
+🔹 Clean separation of UI, business logic, and data
 
-✅ Extensive support for @Preview — multiple screen sizes and Light/Dark mode
+🔹 Multi-device @Preview support (Phone, Tablet, Foldable – Light & Dark modes)
 
-✅ Easy to integrate with real APIs and persistent storage
+📁 Module Responsibilities
+data
+Provides data source logic (local/remote)
 
-📸 UI Preview
-Light Mode	Dark Mode
+Supplies fake/mock repository data
 
-(You can replace the placeholder images above with real screenshots from your app.)
+Contains actual implementations of the repository interface from domain
 
-🚀 Getting Started
-Clone the repo
+domain
+Defines core models (GithubModel, OwnerModel)
+
+Hosts business rules and UseCase classes
+
+Declares repository interfaces used by the app
+
+ui
+Implements all Compose-based screens and components
+
+Manages theme, navigation, and ViewModels
+
+Provides responsive previews for multiple screen sizes and themes
+
+🚀 How to Run
+Clone the repo:
 
 bash
 Copy
 Edit
 git clone https://github.com/jericricafrente03/MetroMart.git
-Open with Android Studio (Giraffe or newer)
+Open with Android Studio Hedgehog or newer
 
-Run the ui module on an emulator or device
+Run the ui module on an emulator or physical device
 
-🛠️ Tech Stack
-Kotlin
+🧪 Ideal For
+Practicing modular and scalable Android architecture
 
-Jetpack Compose
+Learning modern UI development with Compose
 
-Material 3
-
-MVVM
-
-Modular Project Structure
-
-Preview API
-
-🤝 Contributions
-Feel free to fork, contribute, or give feedback. Star ⭐ the project if you found it helpful!
-
-Let me know if you’d like me to generate a real screenshot placeholder or badges for your modules too!
+Quick testing of preview support for different screen sizes
