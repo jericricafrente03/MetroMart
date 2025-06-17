@@ -5,13 +5,13 @@ Perfect for learning scalable architecture, UI composition, and modern Android p
 🧩 Modular Architecture
 MetroMart follows a modular structure for better maintainability and separation of concerns:
 
-kotlin
-Copy
-Edit
+
 📦 MetroMart
 ├── data      → Contains DTOs, repository implementations, and fake/mock data
 ├── domain    → Defines models, use cases, and repository interfaces
 ├── ui        → Contains Jetpack Compose UI, themes, navigation, previews
+
+
 ✨ Features
 🔹 Jetpack Compose with Material 3 styling
 
