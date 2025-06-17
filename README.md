@@ -3,6 +3,7 @@ MetroMart is a modern GitHub repository viewer app built with Jetpack Compose, f
 It showcases responsive UI design, performance optimizations, and testability — perfect for learning real-world Android development.
 
 ✨ Key Features
+
 ✅ Built with Jetpack Compose and Material 3
 
 ✅ Follows MVVM + Clean Architecture
