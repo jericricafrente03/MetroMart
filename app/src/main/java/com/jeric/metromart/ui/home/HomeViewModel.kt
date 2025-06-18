@@ -1,5 +1,6 @@
 package com.jeric.metromart.ui.home
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.jeric.metromart.domain.model.GithubModel
@@ -36,12 +37,16 @@ class HomeViewModel @Inject constructor(
     private fun loadData() = viewModelScope.launch {
         useCases.fetchDataUseCase().collectLatest { result ->
             when(result){
-                is DataState.Error -> _uiState.update { it.copy(error = result.message) }
+                is DataState.Error -> {
+                    if (result.data?.isNotEmpty() == true){
+                        _uiState.update { it.copy(isSuccess = result.data ?: emptyList(), isLoading = false) }
+                    }else{
+                        _uiState.update { it.copy(error = result.message, isLoading = false) }
+                    }
+                }
                 is DataState.Loading -> _uiState.update { it.copy(isLoading = true) }
                 is DataState.Success -> {
-                    _uiState.update { it.copy(isSuccess = result.data ?: emptyList()) }
-                    delay(1000)
-                    _uiState.update { it.copy(isLoading = false) }
+                    _uiState.update { it.copy(isSuccess = result.data ?: emptyList(), isLoading = false) }
                 }
             }
         }

@@ -8,7 +8,6 @@ import com.jeric.metromart.data.mapper.toEntityList
 import com.jeric.metromart.data.remote.GithubApiService
 import com.jeric.metromart.domain.model.GithubModel
 import com.jeric.metromart.domain.repository.ListRepository
-import com.jeric.metromart.util.NetworkStat
 import com.jeric.metromart.util.networkBoundResource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.map
@@ -23,7 +22,6 @@ class ListRepositoryImpl @Inject constructor(
     private val dataBase = database.githubDao()
 
     override fun getRepositories() = networkBoundResource(
-        shouldFetch = { NetworkStat.Status },
         query = { dataBase.getAllGithubEntities().map { it.toDomainList() } },
         fetch = { githubApiService.getRepositories() },
         saveFetchResult = { data ->

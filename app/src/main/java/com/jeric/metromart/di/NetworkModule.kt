@@ -5,9 +5,7 @@ import com.google.gson.GsonBuilder
 import com.jeric.metromart.data.local.MetroMartDataBase
 import com.jeric.metromart.data.remote.GithubApiService
 import com.jeric.metromart.data.repository.ListRepositoryImpl
-import com.jeric.metromart.data.repository.NetworkConnectivityObserverImpl
 import com.jeric.metromart.domain.repository.ListRepository
-import com.jeric.metromart.domain.repository.NetworkConnectivityObserver
 import com.jeric.metromart.util.Constants
 import dagger.Module
 import dagger.Provides
@@ -95,19 +93,5 @@ object NetworkModule {
         )
     }
 
-    @Provides
-    @Singleton
-    fun provideApplicationScope(): CoroutineScope {
-        return CoroutineScope(SupervisorJob() + Dispatchers.Default)
-    }
-
-    @Provides
-    @Singleton
-    fun provideNetworkConnectivityObserver(
-        @ApplicationContext context: Context,
-        scope: CoroutineScope
-    ): NetworkConnectivityObserver {
-        return NetworkConnectivityObserverImpl(context, scope)
-    }
 
 }

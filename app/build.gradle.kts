@@ -17,7 +17,6 @@ android {
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -35,6 +34,9 @@ android {
             matchingFallbacks += listOf("release")
             isDebuggable = false
         }
+    }
+    buildFeatures {
+        buildConfig =  true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

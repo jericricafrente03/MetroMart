@@ -12,7 +12,3 @@ object ConstantsTest {
     const val ID = "id"
     const val DESCRIPTION = "description"
 }
-
-object NetworkStat {
-    var Status = false
-}
